@@ -3,6 +3,7 @@ import FunctionalComp from './Components/functionalComp';
 import ClassComp from './Components/classComp';
 import Click from './Components/Click';
 import Counter from './Components/Counter';
+import ParentComp from './Components/ParentComp';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ClassComp/>
       <Click />
       <Counter />
+      <ParentComp />
     </div>
   );
 }
