@@ -1,8 +1,18 @@
 import './App.css';
+import FunctionalComp from './Components/functionalComp';
+import ClassComp from './Components/classComp';
+import Click from './Components/Click';
+import Counter from './Components/Counter';
 
 function App() {
   return (
-    <h1>Hello World!!</h1>
+    <div>
+      <h1>ASDF!!</h1>
+      <FunctionalComp></FunctionalComp>
+      <ClassComp/>
+      <Click />
+      <Counter />
+    </div>
   );
 }
 
