@@ -1,11 +1,20 @@
 import './App.css';
+import React, { Component } from 'react'
+import NewComp from './Components/NewComp';
 
-function App() {
-  return (
-    <div>
-      <h1>ASDF!!</h1>
-    </div>
-  );
+export class App extends Component {
+  style = {
+    fontStyle: "bold",
+    color: "teal"
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1 style={this.style}>Welcome</h1>
+        <NewComp />
+      </div>
+    )
+  }
 }
 
 export default App;
