@@ -1,9 +1,12 @@
-import './Style.css';
+import './Style.scss';
+import { Router } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <h1>ASDF</h1>
+      <Router>
+        
+      </Router>
     </div>
   );
 }
