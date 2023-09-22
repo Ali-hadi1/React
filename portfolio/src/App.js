@@ -1,9 +1,13 @@
-import './Style.css';
+import './Style.scss';
+import { Route, Router } from 'react-router-dom';
+import Layout from './components/Layout';
 
 function App() {
   return (
     <div>
-      <h1>ASDF</h1>
+      <Router>
+        <Route path="/" element={<Layout />} />
+      </Router>
     </div>
   );
 }
