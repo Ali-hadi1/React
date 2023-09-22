@@ -1,7 +1,15 @@
+import SearchBar from "./components/SearchBar";
+import searchImage from "./api";
+
 function App() {
+
+  const handleSubmit = (term) => {
+    searchImage(term)
+  }
+
   return (
     <div>
-      App
+      <SearchBar onSubmit={handleSubmit}/>
     </div>
   );
 }
