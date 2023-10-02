@@ -14,7 +14,11 @@
     margin-bottom: 10px;
     font-family: 'Arial', sans-serif;
   }
-  
+
+  .d-inline {
+    display: inline !important;
+  }
+
   .form-container input[type="text"],
   .form-container input[type="number"],
   .form-container input[type="email"],

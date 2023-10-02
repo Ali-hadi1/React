@@ -8,9 +8,12 @@ export default function Form() {
             lastName: "", 
             email: "",
             comment: "",
-            policy: true
+            policy: true,
+            employment: ""
         }
     )
+
+    console.log(formData.employment);
     
     function handleChange(event) {
         const {name, value, type, checked} = event.target
@@ -58,13 +61,50 @@ export default function Form() {
                     value={formData.comment} 
                 />
                 <input 
+                    className="d-inline"
                     name="policy"
                     id="policy"
                     type="checkbox"
                     onChange={handleChange}
                     checked={formData.policy}
                 />
-                <label htmlFor="policy"> Agree with our policy?</label>
+                <label className="d-inline" htmlFor="policy"> Agree with our policy?</label>
+                <fieldset>
+                    <legend>Current Employment Status</legend>
+                    <input
+                        className="d-inline"
+                        type="radio"
+                        id="unemployed"
+                        name="employment"
+                        value="unemployed"
+                        checked={formData.employment === "unemployed"}
+                        onChange={handleChange}
+                    />
+                    <label className="d-inline" htmlFor="unemployed">Unemployed</label>
+                    <br />
+                    <input 
+                        className="d-inline"
+                        type="radio"
+                        id="part-time" 
+                        name="employment"
+                        value="part-time"
+                        checked={formData.employment === "part-time"}
+                        onChange={handleChange}   
+                    />
+                    <label className="d-inline" htmlFor="part-time">Part-time</label>
+                    <br />
+                    <input 
+                        className="d-inline"
+                        type="radio"
+                        id="full-time"
+                        name="employment"
+                        value="full-time"
+                        checked={formData.employment === "full-time"}
+                        onChange={handleChange}
+                    />
+                    <label className="d-inline" htmlFor="full-time">Full-time</label>
+                    <br />
+                </fieldset>
             </form>
         </div>
     )
