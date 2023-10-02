@@ -13,8 +13,6 @@ export default function Form() {
             favoriteColor: ""
         }
     )
-
-    console.log(formData.favoriteColor);
     
     function handleChange(event) {
         const {name, value, type, checked} = event.target
@@ -25,11 +23,15 @@ export default function Form() {
             }
         })
     }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+    }
     
     return (
         <div className="form-container">
             <h2>Form</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="FirstName">Frist Name:</label>
                 <input
                     type="text"
@@ -123,6 +125,7 @@ export default function Form() {
                     <option value="indigo">Indigo</option>
                     <option value="violet">Violet</option>
                 </select>
+                <button type="submit">Submit</button>
             </form>
         </div>
     )
