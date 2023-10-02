@@ -2,11 +2,14 @@
   box-sizing: border-box;
 }
 body {
-  background-color: white;
+  margin: 0;
+  background-color: #639;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
-.main {
+/* .main {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
