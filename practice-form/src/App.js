@@ -6,7 +6,7 @@ import './App.css'
 export default function App() {
     
     return (
-        <main class="main">
+        <main className="main">
             <Form />
         </main>
     )
