@@ -9,6 +9,7 @@
   
   .form-container label,
   .form-container input,
+  .form-container select,
   .form-container button {
     display: block;
     margin-bottom: 10px;
@@ -23,6 +24,7 @@
   .form-container input[type="number"],
   .form-container input[type="email"],
   .form-container input[type="file"], 
+  .form-container select, 
   textarea {
     width: 100%;
     padding: 8px;

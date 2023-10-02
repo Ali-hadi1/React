@@ -9,11 +9,12 @@ export default function Form() {
             email: "",
             comment: "",
             policy: true,
-            employment: ""
+            employment: "",
+            favoriteColor: ""
         }
     )
 
-    console.log(formData.employment);
+    console.log(formData.favoriteColor);
     
     function handleChange(event) {
         const {name, value, type, checked} = event.target
@@ -105,6 +106,23 @@ export default function Form() {
                     <label className="d-inline" htmlFor="full-time">Full-time</label>
                     <br />
                 </fieldset>
+                <br />
+                <label htmlFor="favoriteColor">Color:</label>
+                <select 
+                    id="favoriteColor"
+                    value={formData.favoriteColor}
+                    onChange={handleChange}
+                    name="favoriteColor"
+                >
+                    <option value="">Choose Your Favorite Color</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="indigo">Indigo</option>
+                    <option value="violet">Violet</option>
+                </select>
             </form>
         </div>
     )
