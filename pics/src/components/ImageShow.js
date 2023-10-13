@@ -1,7 +1,7 @@
-function ImageShow() {
+function ImageShow({ image }) {
     return (
       <div>
-        ImageShow
+        {image.id}
       </div>
     );
   }
