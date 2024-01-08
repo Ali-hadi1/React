@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './css/index.css';
 
 const message = [
@@ -7,7 +8,15 @@ const message = [
 ]
 
 function App() {
-	const step = 1;
+	const [step, setStep] = useState(1);
+
+	function handlePrevious() {
+		if (step > 1) setStep(step - 1)
+	}
+
+	function handleNext() {
+		if(step < 3) setStep(step + 1)
+	}
 
 	return (
 		<div className='flex flex-col w-4/12 m-auto mt-16 rounded-md px-16 py-3 bg-slate-100'>
@@ -20,8 +29,8 @@ function App() {
 				<p className='font-medium'>Step {step}: {message[step -1]}</p>
 			</div>
 			<div className='flex justify-between'>
-				<button className='px-2 py-0.5 rounded-2xl bg-indigo-600 text-white'>Previous</button>
-				<button className='px-2 py-0.5 rounded-2xl bg-indigo-600 text-white'>Next</button>
+				<button className='px-2 py-0.5 rounded-2xl bg-indigo-600 text-white' onClick={handlePrevious}>Previous</button>
+				<button className='px-2 py-0.5 rounded-2xl bg-indigo-600 text-white' onClick={handleNext}>Next</button>
 			</div>
 		</div>
 	);
