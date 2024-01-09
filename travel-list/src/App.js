@@ -2,10 +2,9 @@ import './css/index.css';
 
 function App() {
   return (
-    <div className='font-bold text-red-500'>
-      App
-    </div>
-  );
+    <div>App</div>
+  )
 }
+
 
 export default App;
