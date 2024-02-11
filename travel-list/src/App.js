@@ -1,29 +1,8 @@
 import { useState } from "react";
 
-const initialItems = [
-  {
-    id: 1,
-    description: "Passports",
-    quantity: 2,
-    packed: false
-  },
-  {
-    id: 2,
-    description: "Socks",
-    quantity: 12,
-    packed: true
-  },
-  {
-    id: 3,
-    description: "Charger",
-    quantity: 1,
-    packed: true
-  },
-]
-
 
 export default function App() {
-  const [items, setItems] = useState(initialItems)
+  const [items, setItems] = useState([])
 
   function handleAddItems(item) {
     setItems((items) => [...items, item])
@@ -46,7 +25,7 @@ export default function App() {
       <Logo />
       <Form onAddItems={handleAddItems}/>
       <PackingList items={items} onDeleteItem={handleDeleteItem} onToggleItems={handleToggleItem}/>
-      <Stats />
+      <Stats items={items}/>
     </div>
   )
 }
@@ -107,10 +86,25 @@ function Item({item, onDeleteItem, onToggleItems}) {
   )
 }
 
-function Stats() {
+function Stats({items}) {
+  if (!items.length) {
+    return (
+      <p className="stats">
+        <em>Start adding some items to your packing list 🚀 </em>
+      </p>
+    )
+  }
+
+  const numItems = items.length;
+  const numPacked = items.filter((item) => item.packed).length;
+  const precentage = Math.round((numPacked / numItems) * 100)
   return (
     <footer className="stats">
-      <em>You have X items on you list, and you already packed X (X%)</em>
+      <em>
+        { precentage === 100 
+        ? 'You got everything! Ready to go✈ '
+        : `You have ${numItems} items on you list, and you already packed ${numPacked} (${precentage}%)`}
+      </em>
     </footer>
   )
 }
