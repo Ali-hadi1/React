@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import './css/index.css';
 
 const message = [
@@ -7,7 +7,15 @@ const message = [
 	"Invest your new income"
 ]
 
-function App() {
+export default function App() {
+	return (
+		<div>
+			<Steps/>
+		</div>
+	)
+}
+
+function Steps() {
 	const [step, setStep] = useState(1);
 	const [isOpen, setIsOpen] = useState(true)
 
@@ -36,8 +44,8 @@ function App() {
 						<p className='font-medium'>Step {step}: {message[step -1]}</p>
 					</div>
 					<div className='flex justify-between'>
-						<button className='px-2 py-0.5 rounded-2xl bg-indigo-600 text-white' onClick={handlePrevious}>Previous</button>
-						<button className='px-2 py-0.5 rounded-2xl bg-indigo-600 text-white' onClick={handleNext}>Next</button>
+						<Button textColor='#fff' bgColor='#7950f2' onClick={handlePrevious}><span>↩</span> Previous</Button>
+						<Button textColor='#fff' bgColor='#7950f2' onClick={handleNext}>Next <span>↪</span></Button>
 					</div>
 				</div>)
 			}
@@ -45,4 +53,14 @@ function App() {
 	);
 }
 
-export default App;
+function Button({textColor, bgColor, onClick, children}) {
+	return (
+		<button
+			className='px-2 py-0.5 rounded-2xl bg-indigo-600 text-white'
+			style={{backgroundColor: bgColor, color: textColor}} 
+			onClick={onClick}
+		>
+			{children}
+		</button>
+	)
+}
