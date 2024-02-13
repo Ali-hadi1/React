@@ -41,7 +41,7 @@ function Steps() {
 						<div className={`flex justify-center items-center w-6 h-6 rounded-full ${step >= 3 ? ' bg-indigo-600 text-white' : 'bg-slate-300'}`}>3</div>
 					</div>
 					<div className='py-8 self-center'>
-						<p className='font-medium'>Step {step}: {message[step -1]}</p>
+						<StepMessage step={step}>{message[step - 1]}</StepMessage>
 					</div>
 					<div className='flex justify-between'>
 						<Button textColor='#fff' bgColor='#7950f2' onClick={handlePrevious}><span>↩</span> Previous</Button>
@@ -51,6 +51,15 @@ function Steps() {
 			}
 		</div>
 	);
+}
+
+function StepMessage({step, children}) {
+	return (
+		<div className='font-medium'>
+			<h3 className='text-center'>Step {step}</h3>
+			{children}
+		</div>
+	)
 }
 
 function Button({textColor, bgColor, onClick, children}) {
